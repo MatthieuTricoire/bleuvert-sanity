@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { Category } from "@/types/category";
 import Link from "next/link";
-import { Category } from "../../types/category";
 import { notFound, usePathname } from "next/navigation";
 import { Fragment } from "react";
 
