@@ -29,8 +29,6 @@ function App() {
       toast.success("Ok");
       event.target.reset();
     } else {
-      console.log("Error", data);
-
       toast.error("Quelque chose s'est mal passé. Merci de réessayer.");
     }
   };
