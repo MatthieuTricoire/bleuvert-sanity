@@ -6,8 +6,11 @@ import PhotoAlbum, { Photo, RenderPhotoProps } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+interface CustomPhoto extends Photo {
+  blurDataUrl: string;
+}
 type GalleryProps = {
-  photos: Photo[];
+  photos: CustomPhoto[];
 };
 
 function NextJsImage({
