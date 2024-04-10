@@ -50,7 +50,7 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
         height={post.mainImage.height}
       />
 
-      <section className="w-full bg-red-100 flex flex-col md:flex-row md:justify-center gap-8 md:gap-16">
+      <section className="w-full  flex flex-col md:flex-row md:justify-center gap-8 md:gap-16">
         <Aside localisation={post.location} area={post.area} />
         <div>
           <Body body={post.body} />
