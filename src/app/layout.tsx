@@ -15,7 +15,14 @@ export const metadata: Metadata = {
     title: "Studio bleuvert",
     siteName: "Studio bleuvert",
     type: "website",
-    images: "/main-logo.png",
+    images: [
+      {
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        url: "https://cdn.sanity.io/images/oqnh3zqe/production/3fc58161898112d794cc883ca8e30af47da32884-2421x512.png",
+      },
+    ],
   },
 
   twitter: {
