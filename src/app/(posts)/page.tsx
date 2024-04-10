@@ -1,5 +1,10 @@
 import { PostCard } from "@/components/posts/post-card";
 import { getCategoriesWithPosts } from "../../../sanity/lib/queries";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Studio bleuvert - Agence architecture intérieur et décoration - Pau",
+};
 
 export default async function Page() {
   const categoriesWithPosts = await getCategoriesWithPosts();
