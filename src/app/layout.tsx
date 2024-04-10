@@ -15,18 +15,15 @@ export const metadata: Metadata = {
     title: "Studio bleuvert",
     siteName: "Studio bleuvert",
     type: "website",
-    images: "main-logo.png",
+    images: "/main-logo.png",
   },
+
   twitter: {
     card: "summary_large_image",
     site: "Studio bleuvert",
     title: "Studio bleuvert",
     description: "Studio d'architecture d'intérieur et décoration à Pau",
     creator: "@matthieutricoire",
-    images: {
-      url: "https://raw.githubusercontent.com/gitdagray/my-blogposts/main/images/og-card.png",
-      alt: "Preview image for Dave Gray",
-    },
   },
 };
 
