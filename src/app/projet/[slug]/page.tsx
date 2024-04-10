@@ -5,6 +5,7 @@ import { Gallery } from "@/components/gallery";
 import Aside from "./components/aside";
 import Body from "./components/body";
 import PhotographerText from "./components/photographer";
+import { BreadcrumbComponent } from "./components/breadcrumb";
 
 type SlugProjectPageProps = {
   params: {
@@ -36,6 +37,8 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
         </h2>
       </div>
 
+      <BreadcrumbComponent post={post} />
+
       <Image
         src={post.mainImage.src}
         placeholder="blur"
@@ -47,7 +50,7 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
         height={post.mainImage.height}
       />
 
-      <section className="w-full flex flex-col md:flex-row md:justify-center gap-8 md:gap-16">
+      <section className="w-full bg-red-100 flex flex-col md:flex-row md:justify-center gap-8 md:gap-16">
         <Aside localisation={post.location} area={post.area} />
         <div>
           <Body body={post.body} />

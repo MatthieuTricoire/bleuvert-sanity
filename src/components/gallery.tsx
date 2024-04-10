@@ -21,6 +21,7 @@ function NextJsImage({
         fill
         src={photo}
         placeholder={"blurDataUrl" in photo ? "blur" : undefined}
+        blurDataURL={photo.blurDataUrl}
         quality={50}
         {...{ alt, sizes, title, className, onClick }}
       />

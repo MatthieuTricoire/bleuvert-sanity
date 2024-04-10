@@ -9,7 +9,7 @@ const PrestationPage = () => {
         Nos prestation
       </h1>
 
-      <div className="grid grid-cols-3 text-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-8">
         {prestationConfig.map((prestation: Prestation, idx: number) => (
           <PrestationCard key={idx} prestation={prestation} />
         ))}
