@@ -15,7 +15,6 @@ function NextJsImage({
   imageProps: { alt, title, sizes, className, onClick },
   wrapperStyle,
 }: RenderPhotoProps) {
-  console.log(photo);
   return (
     <div style={{ ...wrapperStyle, position: "relative" }}>
       <Image
