@@ -18,8 +18,8 @@ function NextJsImage({
         src={photo}
         placeholder={"blurDataUrl" in photo ? "blur" : undefined}
         blurDataURL={photo.blurDataUrl}
-        quality={50}
-        {...{ alt, sizes, title, className, onClick }}
+        sizes="50vw"
+        {...{ alt, title, className, onClick }}
       />
     </div>
   );
@@ -33,7 +33,6 @@ export const Gallery = ({ photos }: GalleryProps) => {
   return (
     <>
       <PhotoAlbum
-        sizes={{ size: "50vw" }}
         layout="masonry"
         photos={photos}
         columns={2}
