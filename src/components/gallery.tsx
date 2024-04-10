@@ -1,7 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import PhotoAlbum, { Photo, RenderPhotoProps } from "react-photo-album";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 type GalleryProps = {
   photos: Photo[];
@@ -12,24 +15,44 @@ function NextJsImage({
   imageProps: { alt, title, sizes, className, onClick },
   wrapperStyle,
 }: RenderPhotoProps) {
+  console.log(photo);
   return (
     <div style={{ ...wrapperStyle, position: "relative" }}>
       <Image
         fill
         src={photo}
-        placeholder={"blurDataUrllll" in photo ? "blur" : undefined}
-        {...{ alt, title, sizes, className, onClick }}
+        placeholder="blur"
+        blurDataURL={photo.blurDataUrl}
+        quality={50}
+        {...{ alt, sizes, title, className, onClick }}
       />
     </div>
   );
 }
 export const Gallery = ({ photos }: GalleryProps) => {
+  const [index, setIndex] = useState(-1);
   return (
-    <PhotoAlbum
-      layout="columns"
-      photos={photos}
-      columns={2}
-      renderPhoto={NextJsImage}
-    />
+    <>
+      <PhotoAlbum
+        sizes={{ size: "50vw" }}
+        layout="masonry"
+        photos={photos}
+        columns={2}
+        renderPhoto={NextJsImage}
+        onClick={({ index }) => setIndex(index)}
+      />
+
+      <Lightbox
+        toolbar={{ buttons: ["close"] }}
+        styles={{
+          container: { backgroundColor: "white" },
+          button: { color: "black" },
+        }}
+        index={index}
+        slides={photos}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+      />
+    </>
   );
 };

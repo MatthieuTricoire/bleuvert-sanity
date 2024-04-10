@@ -9,11 +9,11 @@ export const NavbarConfig = {
       label: "Prestations",
     },
     {
-      href: "about",
+      href: "/about",
       label: "À propos",
     },
     {
-      href: "contact",
+      href: "/contact",
       label: "Contact",
     },
   ],

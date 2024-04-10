@@ -7,7 +7,7 @@ type BodyProps = {
 };
 const Body = ({ body }: BodyProps) => {
   return (
-    <div className="prose text-justify border-2 border-red-50 flex-1">
+    <div className="prose md:prose-lg text-justify flex-1 mb-6">
       <PortableText value={body} />
     </div>
   );

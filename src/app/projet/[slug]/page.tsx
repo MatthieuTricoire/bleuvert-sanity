@@ -1,12 +1,10 @@
 import React from "react";
-import PhotoAlbum, { Photo, RenderPhotoProps } from "react-photo-album";
 import { getPostBySlug } from "../../../../sanity/lib/queries";
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
-import { AreaChart, Map } from "lucide-react";
 import { Gallery } from "@/components/gallery";
 import Aside from "./components/aside";
 import Body from "./components/body";
+import PhotographerText from "./components/photographer";
 
 type SlugProjectPageProps = {
   params: {
@@ -16,6 +14,13 @@ type SlugProjectPageProps = {
 
 const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
   const post = await getPostBySlug(params.slug);
+  console.log(post.mainImage);
+
+  let photographText;
+  if (post.photographer && post.photographer.firstName) {
+    photographText =
+      post.photographer.firstName + " " + post.photographer.lastName;
+  }
 
   return (
     <div className="flex items-center flex-col flex-1 mt-20 gap-12 md:gap-20 w-full">
@@ -34,20 +39,23 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
       <Image
         src={post.mainImage.src}
         placeholder="blur"
-        blurDataURL={post.mainImage.lqip}
+        blurDataURL={post.mainImage.blurDataUrl}
         alt="Image de couverture du projet"
         sizes="50vw"
         width={post.mainImage.width}
+        className=" max-w-xs md:max-w-4xl"
         height={post.mainImage.height}
       />
 
-      <section className="w-full flex flex-col md:flex-row md:justify-center gap-4 ">
+      <section className="w-full flex flex-col md:flex-row md:justify-center gap-8 md:gap-16">
         <Aside localisation={post.location} area={post.area} />
-
-        <Body body={post.body} />
+        <div>
+          <Body body={post.body} />
+          <PhotographerText photographer={post.photographer} />
+        </div>
       </section>
 
-      <section className="bg-red-200 w-full">
+      <section className="w-full">
         <Gallery photos={post.imageGallery} />
       </section>
     </div>

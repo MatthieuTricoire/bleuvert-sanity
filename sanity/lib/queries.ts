@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import { client } from "./client";
-import { Category } from "../../types/category";
-import { Post } from "../../types/post";
+import { Category } from "@/types/category";
+import { Post } from "@/types/post";
 
 export function getPostBySlug(postSlug: string): Promise<Post> {
   return client.fetch(
@@ -67,7 +67,13 @@ export function getCategoryWithPosts(
         title, 
         subtitle,
         "slug": slug.current, 
-        "mainImageUrl": mainImage.asset->url 
+        "mainImageUrl": {
+              "src": mainImage.asset->url,
+              "width": mainImage.asset->metadata.dimensions.width,
+              "height": mainImage.asset->metadata.dimensions.height,
+              "lqip": mainImage.asset ->metadata.lqip,
+              "blurDataUrl": mainImage.asset ->metadata.lqip
+          }
       }
     }`,
     { categorySlug },

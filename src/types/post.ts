@@ -29,7 +29,7 @@ type Image = {
   blurDataUrl: string;
 };
 
-type Photographer = {
+export type Photographer = {
   firstName?: string;
   lastName: string;
   socialLink?: string;

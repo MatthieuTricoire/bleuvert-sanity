@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Link from "next/link";
-import { PostThumbnail } from "../../../types/post";
+import { PostThumbnail } from "@/types/post";
 
 type PostProps = {
   post: PostThumbnail;
@@ -17,7 +17,9 @@ export const PostCard = ({ post }: PostProps) => {
               className="object-cover object-center"
               src={post.mainImageUrl.src}
               placeholder="blur"
-              blurDataURL={post.mainImageUrl.lqip}
+              sizes="(max-width: 768px) 100vw, 20vw"
+              quality={50}
+              blurDataURL={post.mainImageUrl.blurDataUrl}
               alt={`Image de couverture du projet ${post.title}`}
               fill
             />
