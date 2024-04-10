@@ -20,14 +20,14 @@ function NextJsImage({
       <Image
         fill
         src={photo}
-        placeholder="blur"
-        blurDataURL={photo.blurDataUrl}
+        placeholder={"blurDataUrl" in photo ? "blur" : undefined}
         quality={50}
         {...{ alt, sizes, title, className, onClick }}
       />
     </div>
   );
 }
+
 export const Gallery = ({ photos }: GalleryProps) => {
   const [index, setIndex] = useState(-1);
   return (
