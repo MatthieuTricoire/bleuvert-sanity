@@ -1,11 +1,16 @@
 import React from "react";
-import { getPostBySlug } from "../../../../sanity/lib/queries";
+import {
+  getPostBySlug,
+  getPostBySlugQuery,
+} from "../../../../sanity/lib/queries";
 import Image from "next/image";
 import { Gallery } from "@/components/gallery";
 import Aside from "./components/aside";
 import Body from "./components/body";
 import PhotographerText from "./components/photographer";
 import { BreadcrumbComponent } from "./components/breadcrumb";
+import { sanityFetch } from "../../../../sanity/lib/client";
+import { Post } from "@/types/post";
 
 type SlugProjectPageProps = {
   params: {
@@ -14,8 +19,13 @@ type SlugProjectPageProps = {
 };
 
 const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
-  const post = await getPostBySlug(params.slug);
-  console.log(post.mainImage);
+  // const post = await getPostBySlug(params.slug);
+
+  const post: Post = await sanityFetch({
+    query: getPostBySlugQuery,
+    qParams: { slug: params.slug },
+    tags: ["post", "category"],
+  });
 
   let photographText;
   if (post.photographer && post.photographer.firstName) {

@@ -7,6 +7,7 @@ import NavbarMobile from "./navbar-mobile";
 
 export const Navbar = () => {
   let pathname = usePathname();
+
   if (pathname.startsWith("/categorie") || pathname.startsWith("/projet")) {
     pathname = "/";
   }
