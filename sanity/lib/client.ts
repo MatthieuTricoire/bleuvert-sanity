@@ -10,7 +10,7 @@ export const client = createClient({
   apiVersion,
   dataset,
   projectId,
-  useCdn,
+  useCdn: true,
   perspective: "published",
   stega: {
     enabled: false,
