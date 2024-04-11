@@ -40,8 +40,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn("min-h-screen flex flex-col", raleway.className)}>
+    <html lang="fr">
+      <body
+        className={cn(
+          "overflow-y-scroll min-h-screen flex flex-col",
+          raleway.className,
+        )}
+      >
         <Header />
         <main className=" flex-1 flex flex-col items-center justify-center max-w-7xl mx-auto w-full px-2">
           {children}
