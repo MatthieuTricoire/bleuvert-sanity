@@ -23,7 +23,7 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
 
   const post: Post = await sanityFetch({
     query: getPostBySlugQuery,
-    qParams: { slug: params.slug },
+    qParams: { postSlug: params.slug },
     tags: ["post", "category"],
   });
 
