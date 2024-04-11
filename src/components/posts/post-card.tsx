@@ -10,11 +10,11 @@ type PostProps = {
 export const PostCard = ({ post }: PostProps) => {
   return (
     <Link href={`/projet/${post.slug}`}>
-      <Card className="max-w-2xl group h-full w-full border-0 ">
+      <Card className="max-w-2xl group h-full w-full border-0 overflow-hidden">
         <CardContent className="p-0 relative w-full aspect-[1.33]">
           {post.mainImageUrl && post.mainImageUrl.src && (
             <Image
-              className="object-cover object-center"
+              className="object-cover object-center group-hover:scale-[1.01] group-hover:opacity-95 transition"
               src={post.mainImageUrl.src}
               placeholder="blur"
               sizes="(max-width: 768px) 100vw, 20vw"
