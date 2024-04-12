@@ -11,6 +11,7 @@ import PhotographerText from "./components/photographer";
 import { BreadcrumbComponent } from "./components/breadcrumb";
 import { sanityFetch } from "../../../../sanity/lib/client";
 import { Post } from "@/types/post";
+import { Metadata } from "next";
 
 type SlugProjectPageProps = {
   params: {
@@ -18,9 +19,34 @@ type SlugProjectPageProps = {
   };
 };
 
-const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
-  // const post = await getPostBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const slug = params.slug;
 
+  const post: Post = await sanityFetch({
+    query: getPostBySlugQuery,
+    qParams: { postSlug: slug },
+    tags: ["post", "category"],
+  });
+
+  console.log(post.mainImage.src);
+
+  return {
+    title: `Studio bleuvert - Projet ${post.title}`,
+    description: post.subtitle,
+    // openGraph: {
+    //   images: [
+    //     {
+    //       // url: post.mainImage.src,
+    //     },
+    //   ],
+    // },
+  };
+}
+const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
   const post: Post = await sanityFetch({
     query: getPostBySlugQuery,
     qParams: { postSlug: params.slug },
