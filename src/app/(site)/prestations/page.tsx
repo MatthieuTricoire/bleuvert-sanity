@@ -1,6 +1,6 @@
 import React from "react";
 import { PrestationCard } from "./components/prestationCard";
-import { prestationConfig } from "../../config/prestation-config";
+import { prestationConfig } from "@/config/prestation-config";
 
 const PrestationPage = () => {
   return (

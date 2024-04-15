@@ -48,7 +48,7 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main className=" flex-1 flex flex-col items-center justify-center max-w-7xl mx-auto w-full px-2">
+        <main className="flex flex-col flex-1 max-w-7xl w-full mx-auto">
           {children}
         </main>
         <Footer />

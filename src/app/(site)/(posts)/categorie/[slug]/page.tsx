@@ -2,9 +2,9 @@ import React from "react";
 import {
   getCategoryWithPosts,
   getCategoryWithPostsQuery,
-} from "../../../../../sanity/lib/queries";
+} from "@/sanity/lib/queries";
 import { PostCard } from "@/components/posts/post-card";
-import { sanityFetch } from "../../../../../sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/client";
 import { Metadata } from "next";
 import { Category } from "@/types/category";
 

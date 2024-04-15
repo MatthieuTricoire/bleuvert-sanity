@@ -1,5 +1,5 @@
 import { Categories } from "@/components/categories";
-import { getCategoriesWithPosts } from "../../../sanity/lib/queries";
+import { getCategoriesWithPosts } from "@/sanity/lib/queries";
 type PostLayoutProps = {
   children: React.ReactNode;
 };

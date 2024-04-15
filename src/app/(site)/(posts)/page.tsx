@@ -2,9 +2,9 @@ import { PostCard } from "@/components/posts/post-card";
 import {
   getCategoriesWithPosts,
   getCategoriesWithPostsQuery,
-} from "../../../sanity/lib/queries";
+} from "@/sanity/lib/queries";
 import { Metadata } from "next";
-import { sanityFetch } from "../../../sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/client";
 import { Category } from "@/types/category";
 
 export const metadata: Metadata = {

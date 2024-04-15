@@ -1,15 +1,12 @@
 import React from "react";
-import {
-  getPostBySlug,
-  getPostBySlugQuery,
-} from "../../../../sanity/lib/queries";
+import { getPostBySlug, getPostBySlugQuery } from "@/sanity/lib/queries";
 import Image from "next/image";
 import { Gallery } from "@/components/gallery";
 import Aside from "./components/aside";
 import Body from "./components/body";
 import PhotographerText from "./components/photographer";
 import { BreadcrumbComponent } from "./components/breadcrumb";
-import { sanityFetch } from "../../../../sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/client";
 import { Post } from "@/types/post";
 import { Metadata } from "next";
 

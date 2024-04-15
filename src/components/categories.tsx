@@ -8,6 +8,7 @@ import { Fragment } from "react";
 type CategoriesProps = {
   categoriesWithPosts: Category[];
 };
+
 export const Categories = ({ categoriesWithPosts }: CategoriesProps) => {
   const pathname = usePathname();
 
@@ -16,17 +17,17 @@ export const Categories = ({ categoriesWithPosts }: CategoriesProps) => {
 
   return (
     <div className="flex justify-center">
-      <>
-        <Link
-          href="/"
-          className={cn({
-            "font-semibold": pathname === "/",
-          })}
-        >
-          Tout
-        </Link>
-        <span className="ml-4">/</span>
-      </>
+      {/* <> */}
+      {/*   <Link */}
+      {/*     href="/" */}
+      {/*     className={cn({ */}
+      {/*       "font-semibold": pathname === "/", */}
+      {/*     })} */}
+      {/*   > */}
+      {/*     Tout */}
+      {/*   </Link> */}
+      {/*   <span className="ml-4">/</span> */}
+      {/* </> */}
 
       {categoriesWithPosts.map((categoryWithPosts, idx) => {
         return (
@@ -36,7 +37,11 @@ export const Categories = ({ categoriesWithPosts }: CategoriesProps) => {
                 "font-semibold":
                   pathname === `/categorie/${categoryWithPosts.slug}`,
               })}
-              href={`/categorie/${categoryWithPosts.slug}`}
+              href={
+                pathname === `/categorie/${categoryWithPosts.slug}`
+                  ? "/"
+                  : `/categorie/${categoryWithPosts.slug}`
+              }
             >
               {categoryWithPosts.title}
             </Link>
