@@ -29,8 +29,6 @@ export async function generateMetadata({
     tags: ["post", "category"],
   });
 
-  console.log(post.mainImage.src);
-
   return {
     title: `Studio bleuvert - Projet ${post.title}`,
     description: post.subtitle,
@@ -83,7 +81,7 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
         height={post.mainImage.height}
       />
 
-      <section className="w-full  flex flex-col md:flex-row md:justify-center gap-8 md:gap-16">
+      <section className="w-full  flex flex-col px-4 md:flex-row md:justify-center gap-8 md:gap-16">
         <Aside localisation={post.location} area={post.area} />
         <div>
           <Body body={post.body} />
