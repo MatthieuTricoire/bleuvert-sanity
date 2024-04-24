@@ -31,6 +31,7 @@ const AboutPage = () => {
             className="object-contain object-top rounded-3xl"
           />
         </div>
+        <div>test</div>
       </div>
     </div>
   );
