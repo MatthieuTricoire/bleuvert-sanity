@@ -5,7 +5,7 @@ const ContactPage = () => {
   return (
     <div className=" w-full h-full flex-1">
       <section className=" w-full flex flex-col  gap-10">
-        <h1 className="text-center mt-8 md:mt-10 text-3xl md:text-5xl font-[500]">
+        <h1 className="text-center mt-8 md:mt-24 text-3xl md:text-5xl font-[500]">
           Nous contacter
         </h1>
         <ContactForm />
