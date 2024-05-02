@@ -72,13 +72,14 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
 
       <Image
         src={post.mainImage.src}
+        priority
         placeholder="blur"
         blurDataURL={post.mainImage.blurDataUrl}
         alt="Image de couverture du projet"
-        sizes="50vw"
-        width={post.mainImage.width}
+        sizes="(max-width:768px) 320px, 896px )"
+        width={896}
         className=" max-w-xs md:max-w-4xl"
-        height={post.mainImage.height}
+        height={597}
       />
 
       <section className="w-full  flex flex-col px-4 md:flex-row md:justify-center gap-8 md:gap-16">
