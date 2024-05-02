@@ -3,7 +3,7 @@ import { EditIcon, ImagesIcon } from "@sanity/icons";
 
 export default defineType({
   name: "post",
-  title: "Post",
+  title: "Projet",
   type: "document",
   groups: [
     {
@@ -46,7 +46,7 @@ export default defineType({
         maxLength: 96,
       },
       description:
-        "C'est ce qui sera utilisé pour construire l'url de ce projet. Si le slug est égal à 'project-leon', alors l'url sera www.blabla/projets/projet-leon",
+        "Utilisé dans l'url du projet. Exemple : www.nomdusite/projet/slug",
       validation: (rule) =>
         rule.required().error("Un slug doit obligatoirement être généré."),
     }),
