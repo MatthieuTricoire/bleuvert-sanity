@@ -18,7 +18,7 @@ export const PostCard = ({ post }: PostProps) => {
               src={post.mainImageUrl.src}
               placeholder="blur"
               sizes="(max-width: 768px) 100vw, 20vw"
-              quality={50}
+              priority
               blurDataURL={post.mainImageUrl.blurDataUrl}
               alt={`Image de couverture du projet ${post.title}`}
               fill
