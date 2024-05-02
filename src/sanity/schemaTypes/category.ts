@@ -1,9 +1,8 @@
-import { kMaxLength } from "buffer";
 import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "category",
-  title: "Category",
+  title: "Catégorie",
   type: "document",
   fields: [
     defineField({
@@ -20,12 +19,6 @@ export default defineType({
         source: "title",
         maxLength: 96,
       },
-    }),
-
-    defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
     }),
   ],
 });
