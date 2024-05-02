@@ -4,7 +4,7 @@ import React from "react";
 const AboutPage = () => {
   return (
     <div className=" h-full flex-1 w-full ">
-      <div className=" grid grid-cols-12 h-full mt-10">
+      <div className=" grid grid-cols-12 h-full mt-10 sm:mt-24">
         <div className="col-start-2 col-span-6 row-start-1 row-span-1">
           <h1 className="text-3xl font-semibold  mt-20">À propos de nous</h1>
         </div>
@@ -31,7 +31,6 @@ const AboutPage = () => {
             className="object-contain object-top rounded-3xl"
           />
         </div>
-        <div>test</div>
       </div>
     </div>
   );
