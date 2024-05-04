@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { CategoriesIcons } from "./custom-previews";
 
 export default defineType({
   name: "category",
@@ -21,4 +22,18 @@ export default defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+    prepare: ({ title }) => {
+      const data = {
+        title,
+      };
+      return {
+        title,
+        media: CategoriesIcons(data),
+      };
+    },
+  },
 });
