@@ -46,27 +46,21 @@ export default defineType({
         maxLength: 96,
       },
       description:
-        "Utilisé dans l'url du projet. Exemple : www.nomdusite/projet/slug",
+        "Utilisé dans l'url pour accéder au projet. Exemple : www.nomdusite/projet/slug. \n Cliquer sur générer pour créer le slug automatiquement en se basant sur le titre du projet.",
       validation: (rule) =>
         rule.required().error("Un slug doit obligatoirement être généré."),
     }),
 
     defineField({
       group: "generalInformation",
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      name: "category",
+      title: "Categorie",
+      type: "reference",
+      to: { type: "category" },
       validation: (rule) =>
         rule
           .required()
           .error("Une catégorie doit obligatoirement être sélectionnée."),
-    }),
-    defineField({
-      group: "generalInformation",
-      name: "publishedAt",
-      title: "Published at",
-      type: "datetime",
     }),
     defineField({
       group: "generalInformation",
@@ -80,11 +74,33 @@ export default defineType({
       title: "Surface",
       type: "number",
     }),
+    // defineField({
+    //   group: "generalInformation",
+    //   name: "body",
+    //   title: "Corps",
+    //   type: "blockContent",
+    //   validation: (rule) => rule.required().error("Obligatoire"),
+    // }),
     defineField({
       group: "generalInformation",
       name: "body",
       title: "Corps",
-      type: "blockContent",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          // Only allow these block styles
+          styles: [{ title: "Normal", value: "normal" }],
+          marks: {
+            // Only allow these decorators
+            decorators: [
+              { title: "Gras comme John", value: "strong" },
+              { title: "Italique", value: "em" },
+            ],
+          },
+        },
+      ],
+      validation: (rule) => rule.required().error("Obligatoire"),
     }),
     defineField({
       group: "images",
