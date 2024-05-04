@@ -3,9 +3,11 @@ import { Photographer } from "@/types/post";
 import Link from "next/link";
 
 type PhotographerProps = {
-  photographer: Photographer;
+  photographer?: Photographer;
 };
 const PhotographerText = ({ photographer }: PhotographerProps) => {
+  if (!photographer) return null;
+
   const photographerName = photographer.firstName
     ? photographer.firstName + " " + photographer.lastName
     : photographer.lastName;
