@@ -1,5 +1,5 @@
 import { defineField, defineType } from "sanity";
-
+import { PhotographersInitials } from "./custom-previews";
 export default defineType({
   name: "photographer",
   title: "Photographe",
@@ -26,4 +26,21 @@ export default defineType({
       type: "url",
     }),
   ],
+  preview: {
+    select: {
+      title: "lastName",
+      subtitle: "firstName",
+    },
+    prepare: ({ title, subtitle }) => {
+      const data = {
+        title,
+        subtitle,
+      };
+      return {
+        title,
+        subtitle,
+        media: PhotographersInitials(data),
+      };
+    },
+  },
 });
