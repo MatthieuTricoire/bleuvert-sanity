@@ -1,5 +1,5 @@
 import React from "react";
-import { getPostBySlug, getPostBySlugQuery } from "@/sanity/lib/queries";
+import { getPostBySlugQuery } from "@/sanity/lib/queries";
 import Image from "next/image";
 import { Gallery } from "@/components/gallery";
 import Aside from "./components/aside";
@@ -29,16 +29,14 @@ export async function generateMetadata({
     tags: ["post", "category"],
   });
 
+  const imageUrl = `${post.mainImage.src}?w=630&h=630`;
+
   return {
     title: `Studio bleuvert - Projet ${post.title}`,
     description: post.subtitle,
-    // openGraph: {
-    //   images: [
-    //     {
-    //       // url: post.mainImage.src,
-    //     },
-    //   ],
-    // },
+    openGraph: {
+      images: { url: `${imageUrl}`, width: 630, height: 630 },
+    },
   };
 }
 const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
