@@ -8,7 +8,6 @@ export async function submitForm(prevState: any, formData: FormData) {
     });
 
     const data = await response.json();
-    console.log("data received during sending email", data);
     if (data.success === true) {
       return { success: true, message: data.message };
     }
