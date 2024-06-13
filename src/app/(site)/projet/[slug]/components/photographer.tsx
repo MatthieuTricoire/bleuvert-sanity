@@ -1,6 +1,6 @@
 import React from "react";
-import { Photographer } from "@/types/post";
 import Link from "next/link";
+import { Photographer } from "@/types/project";
 
 type PhotographerProps = {
   photographer?: Photographer;
