@@ -1,6 +1,6 @@
 import { TypedObject } from "sanity";
 
-export type PostThumbnail = {
+export type ProjectThumbnail = {
   _id: string;
   title: string;
   subtitle: string;
@@ -8,7 +8,7 @@ export type PostThumbnail = {
   mainImageUrl: Image;
 };
 
-export type Post = {
+export type Project = {
   _id: string;
   title: string;
   subtitle?: string;

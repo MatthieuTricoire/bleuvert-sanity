@@ -7,8 +7,8 @@ import Body from "./components/body";
 import PhotographerText from "./components/photographer";
 import { BreadcrumbComponent } from "./components/breadcrumb";
 import { sanityFetch } from "@/sanity/lib/client";
-import { Post } from "@/types/post";
 import { Metadata } from "next";
+import { Project } from "@/types/project";
 
 type SlugProjectPageProps = {
   params: {
@@ -23,56 +23,56 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const slug = params.slug;
 
-  const post: Post = await sanityFetch({
+  const project: Project = await sanityFetch({
     query: getPostBySlugQuery,
     qParams: { postSlug: slug },
     tags: ["post", "category"],
   });
 
-  const imageUrl = `${post.mainImage.src}?w=630&h=630`;
+  const imageUrl = `${project.mainImage.src}?w=630&h=630`;
 
   return {
-    title: `Studio bleuvert - Projet ${post.title}`,
-    description: post.subtitle,
+    title: `Studio bleuvert - Projet ${project.title}`,
+    description: project.subtitle,
     openGraph: {
       images: { url: `${imageUrl}`, width: 630, height: 630 },
     },
   };
 }
 const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
-  const post: Post = await sanityFetch({
+  const project: Project = await sanityFetch({
     query: getPostBySlugQuery,
     qParams: { postSlug: params.slug },
     tags: ["post", "category"],
   });
 
   let photographText;
-  if (post.photographer && post.photographer.firstName) {
+  if (project.photographer && project.photographer.firstName) {
     photographText =
-      post.photographer.firstName + " " + post.photographer.lastName;
+      project.photographer.firstName + " " + project.photographer.lastName;
   }
 
   return (
     <div className="flex items-center flex-col flex-1 mt-20 gap-12 md:gap-20 w-full">
       <div>
         <h1 className="text-center font-semibold text-3xl md:text-5xl">
-          {post.title}
+          {project.title}
         </h1>
         <h2
           className="text-center font-normal text-xl
           md:text-3xl"
         >
-          {post.subtitle}
+          {project.subtitle}
         </h2>
       </div>
 
-      <BreadcrumbComponent post={post} />
+      <BreadcrumbComponent project={project} />
 
       <Image
-        src={post.mainImage.src}
+        src={project.mainImage.src}
         priority
         placeholder="blur"
-        blurDataURL={post.mainImage.blurDataUrl}
+        blurDataURL={project.mainImage.blurDataUrl}
         alt="Image de couverture du projet"
         sizes="(max-width:768px) 320px, 896px )"
         width={896}
@@ -81,15 +81,15 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
       />
 
       <section className="w-full  flex flex-col px-4 md:flex-row md:justify-center gap-8 md:gap-16">
-        <Aside localisation={post.location} area={post.area} />
+        <Aside localisation={project.location} area={project.area} />
         <div>
-          <Body body={post.body} />
-          <PhotographerText photographer={post.photographer} />
+          <Body body={project.body} />
+          <PhotographerText photographer={project.photographer} />
         </div>
       </section>
 
       <section className="w-full">
-        <Gallery photos={post.imageGallery} />
+        <Gallery photos={project.imageGallery} />
       </section>
     </div>
   );

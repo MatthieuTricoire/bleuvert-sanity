@@ -18,7 +18,15 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        title: ["var(--font-raleway)"],
+      },
       colors: {
+        bleuvert: {
+          secondary: "hsl(var(--bleuvert-secondary))",
+          accent: "hsl(var(--bleuvert-accent))",
+          "light-gray": "hsl(var(--bleuvert-light-gray))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -78,4 +86,3 @@ const config = {
 } satisfies Config;
 
 export default config;
-

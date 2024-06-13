@@ -1,34 +1,37 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Link from "next/link";
-import { PostThumbnail } from "@/types/post";
+import { ProjectThumbnail } from "@/types/project";
 
-type PostProps = {
-  post: PostThumbnail;
+type ProjectProps = {
+  project: ProjectThumbnail;
+  lastProject?: boolean;
 };
 
-export const PostCard = ({ post }: PostProps) => {
+export const ProjectCard = ({ project, lastProject }: ProjectProps) => {
   return (
-    <Link href={`/projet/${post.slug}`}>
+    <Link href={`/projet/${project.slug}`}>
       <Card className="max-w-2xl group h-full w-full border-0 overflow-hidden rounded-sm">
         <CardContent className="p-0 relative w-full aspect-[1.33]">
-          {post.mainImageUrl && post.mainImageUrl.src && (
+          {project.mainImageUrl && project.mainImageUrl.src && (
             <Image
               className="object-cover object-center group-hover:scale-[1.01] group-hover:opacity-95 transition rounded-sm"
-              src={post.mainImageUrl.src}
+              src={project.mainImageUrl.src}
               placeholder="blur"
               sizes="(max-width: 768px) 100vw, 20vw"
               priority
-              blurDataURL={post.mainImageUrl.blurDataUrl}
-              alt={`Image de couverture du projet ${post.title}`}
+              blurDataURL={project.mainImageUrl.blurDataUrl}
+              alt={`Image de couverture du projet ${project.title}`}
               fill
             />
           )}
         </CardContent>
         <CardHeader className="p-0">
-          <CardTitle className="font-normal text-lg">
-            <div className="text-center font-semibold">{post.title}</div>
-            <div className="text-center font-light">{post.subtitle}</div>
+          <CardTitle className="font-normal  font-title text-lg">
+            <div className="text-center">{project.title}</div>
+            {!lastProject && (
+              <div className="text-center font-light">{project.subtitle}</div>
+            )}
           </CardTitle>
         </CardHeader>
       </Card>

@@ -1,54 +1,43 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Category } from "@/types/category";
+import { ProjectThumbnail } from "@/types/project";
 import Link from "next/link";
-import { notFound, usePathname } from "next/navigation";
-import { Fragment } from "react";
+import { notFound, useSearchParams } from "next/navigation";
 
 type CategoriesProps = {
-  categoriesWithPosts: Category[];
+  categoriesList: Category[];
+  projectsByCategory: ProjectThumbnail[];
 };
 
-export const Categories = ({ categoriesWithPosts }: CategoriesProps) => {
-  const pathname = usePathname();
+export const Categories = ({ categoriesList }: CategoriesProps) => {
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get("categorie");
 
-  if (!categoriesWithPosts || categoriesWithPosts.length === 0)
-    return notFound();
+  if (!categoriesList || categoriesList.length === 0) return notFound();
+  //TODO: Ajouter une 404 spécifique
 
   return (
     <div className="flex justify-center">
-      {/* <> */}
-      {/*   <Link */}
-      {/*     href="/" */}
-      {/*     className={cn({ */}
-      {/*       "font-semibold": pathname === "/", */}
-      {/*     })} */}
-      {/*   > */}
-      {/*     Tout */}
-      {/*   </Link> */}
-      {/*   <span className="ml-4">/</span> */}
-      {/* </> */}
-
-      {categoriesWithPosts.map((categoryWithPosts, idx) => {
+      {categoriesList.map((category, idx) => {
         return (
-          <Fragment key={idx}>
+          <li key={idx} className="list-none hightlight">
             <Link
-              className={cn("ml-4", {
-                "font-semibold":
-                  pathname === `/categorie/${categoryWithPosts.slug}`,
+              className={cn("ml-4 font-title", {
+                " highlight-container ": category.slug === selectedCategory,
               })}
               href={
-                pathname === `/categorie/${categoryWithPosts.slug}`
-                  ? "/"
-                  : `/categorie/${categoryWithPosts.slug}`
+                category.slug === selectedCategory
+                  ? `/projets`
+                  : `/projets?categorie=${category.slug}`
               }
             >
-              {categoryWithPosts.title}
+              {category.title}
             </Link>
-            {idx !== categoriesWithPosts.length - 1 && (
+            {idx !== categoriesList.length - 1 && (
               <span className="ml-4"> / </span>
             )}
-          </Fragment>
+          </li>
         );
       })}
     </div>

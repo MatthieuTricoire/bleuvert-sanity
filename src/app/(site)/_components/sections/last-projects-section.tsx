@@ -1,0 +1,35 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { ProjectThumbnail } from "@/types/project";
+import { ProjectCard } from "@/components/posts/post-card";
+import { Typography } from "@/components/typography";
+
+type LastProjectsProps = {
+  projects: ProjectThumbnail[];
+};
+
+export const LastProjects = ({ projects }: LastProjectsProps) => {
+  return (
+    <section className="flex flex-col items-center">
+      <Typography variant="h2" component="h2" className="border-none">
+        Nos dernières réalisations
+      </Typography>
+
+      <div className="grid w-full grid-cols-1 md:grid-cols-4 gap-[20px] pb-[32px]">
+        {projects.map((project, index) => (
+          <div key={index}>
+            <ProjectCard project={project} lastProject />
+          </div>
+        ))}
+
+        <Link
+          href={"/projets"}
+          className="w-full h-full bg-gray-50/50 rounded-md flex flex-col items-center justify-center group hover:bg-gray-50 transition"
+        >
+          <ArrowRight className="size-10 text-muted-foreground group-hover:translate-x-2 transition" />
+          <div className="font-title">Voir tous nos projets</div>
+        </Link>
+      </div>
+    </section>
+  );
+};

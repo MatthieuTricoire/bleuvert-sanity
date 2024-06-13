@@ -1,19 +1,19 @@
 export const NavbarConfig = {
   menus: [
     {
-      href: "/",
+      href: "projets",
       label: "Projets",
     },
     {
-      href: "/prestations",
+      href: "prestations",
       label: "Prestations",
     },
     {
-      href: "/about",
-      label: "À propos",
+      href: "le-studio",
+      label: "Le studio",
     },
     {
-      href: "/contact",
+      href: "contact",
       label: "Contact",
     },
   ],

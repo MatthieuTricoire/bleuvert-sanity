@@ -9,6 +9,7 @@ import { frFRLocale } from "@sanity/locale-fr-fr";
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { schema } from "@/sanity/schema";
+import { visionTool } from "@sanity/vision";
 
 const props = {
   "--my-white": "#fff",
@@ -59,6 +60,6 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
-  plugins: [frFRLocale(), structureTool()],
+  plugins: [frFRLocale(), structureTool(), visionTool()],
   theme: myTheme,
 });

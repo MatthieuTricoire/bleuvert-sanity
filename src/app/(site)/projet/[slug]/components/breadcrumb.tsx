@@ -6,12 +6,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Post } from "@/types/post";
+import { Project } from "@/types/project";
 
 type BreadcrumbComponentProps = {
-  post: Post;
+  project: Project;
 };
-export const BreadcrumbComponent = ({ post }: BreadcrumbComponentProps) => {
+export const BreadcrumbComponent = ({ project }: BreadcrumbComponentProps) => {
   return (
     <Breadcrumb className="self-start mx-auto">
       <BreadcrumbList>
@@ -20,7 +20,7 @@ export const BreadcrumbComponent = ({ post }: BreadcrumbComponentProps) => {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>{post.title}</BreadcrumbPage>
+          <BreadcrumbPage>{project.title}</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

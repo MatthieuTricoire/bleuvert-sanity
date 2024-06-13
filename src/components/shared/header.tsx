@@ -1,17 +1,19 @@
-import Image from "next/image";
 import { Navbar } from "./navbar";
 import { Logo } from "./logo";
 import Link from "next/link";
+import { MaxWidthContainer } from "../max-width-container";
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl mx-auto w-full px-4 md:px-6 lg:px-8 border-b border-b-primary ">
-      <header className="w-full flex justify-between h-[80px] items-center">
-        <Link href="/">
-          <Logo />
-        </Link>
-        <Navbar />
-      </header>
-    </div>
+    <header className="bg-bleuvert-light-gray">
+      <MaxWidthContainer className=" ">
+        <div className="w-full flex justify-between h-[80px] items-center ">
+          <Link href="/">
+            <Logo />
+          </Link>
+          <Navbar />
+        </div>
+      </MaxWidthContainer>
+    </header>
   );
 };
