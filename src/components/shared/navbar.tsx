@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import NavbarMobile from "./navbar-mobile";
+import { buttonVariants } from "../ui/button";
 
 export const Navbar = () => {
   let pathname = usePathname();
@@ -17,17 +18,19 @@ export const Navbar = () => {
 
   return (
     <nav>
-      <div className="md:flex hidden gap-8 text-gray-700 font-title">
+      <div className="md:flex hidden gap-8 text-gray-700 font-title items-center">
         {NavbarConfig.menus.map((item, idx) => {
-          console.log("item", item);
+          const lastItem = idx === NavbarConfig.menus.length - 1
           return (
             <Link
               href={`/${item.href}`}
               key={idx}
-              className={cn("hover:text-primary font-normal text-xl", {
+              className={cn("hover:text-primary font-normal text-xl last:hover:text-white", {
                 "text-primary underline font-semibold":
                   mainCategory === item.href,
-              })}
+              },
+                lastItem && buttonVariants()
+              )}
             >
               {item.label}
             </Link>
@@ -36,6 +39,6 @@ export const Navbar = () => {
       </div>
 
       <NavbarMobile />
-    </nav>
+    </nav >
   );
 };

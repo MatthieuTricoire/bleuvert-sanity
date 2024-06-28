@@ -1,5 +1,4 @@
 import { FeatureCard } from "@/components/feature-card";
-import { Typography } from "@/components/typography";
 import { featuresConfig } from "@/config/features-config";
 import React from "react";
 

@@ -5,7 +5,7 @@ import { MaxWidthContainer } from "../max-width-container";
 
 export const Header = () => {
   return (
-    <header className="bg-bleuvert-light-gray">
+    <header className="">
       <MaxWidthContainer className=" ">
         <div className="w-full flex justify-between h-[80px] items-center ">
           <Link href="/">

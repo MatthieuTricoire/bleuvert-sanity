@@ -30,6 +30,7 @@ type GalleryProps = {
 };
 export const Gallery = ({ photos }: GalleryProps) => {
   const [index, setIndex] = useState(-1);
+
   return (
     <>
       <PhotoAlbum

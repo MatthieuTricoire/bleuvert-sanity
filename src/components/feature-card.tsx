@@ -35,8 +35,8 @@ export const FeatureCard = ({
         </Typography>
       </div>
       <div>{description}</div>
-      <Link href={href} className="flex items-center">
-        En savoir plus <ArrowRight className="size-4 ml-2 text-primary" />
+      <Link href={href} className="flex items-center hover:underline hover:underline-offset-2 group transition-all">
+        En savoir plus <ArrowRight className="size-4 ml-2 text-primary group-hover:translate-x-1" />
       </Link>
     </div>
   );

@@ -11,11 +11,11 @@ type ProjectProps = {
 export const ProjectCard = ({ project, lastProject }: ProjectProps) => {
   return (
     <Link href={`/projet/${project.slug}`}>
-      <Card className="max-w-2xl group h-full w-full border-0 overflow-hidden rounded-sm">
+      <Card className="max-w-2xl group h-full w-full border-0 overflow-hidden rounded-none hover:shadow-none">
         <CardContent className="p-0 relative w-full aspect-[1.33]">
           {project.mainImageUrl && project.mainImageUrl.src && (
             <Image
-              className="object-cover object-center group-hover:scale-[1.01] group-hover:opacity-95 transition rounded-sm"
+              className="object-cover object-center  group-hover:opacity-90 transition "
               src={project.mainImageUrl.src}
               placeholder="blur"
               sizes="(max-width: 768px) 100vw, 20vw"
@@ -28,7 +28,7 @@ export const ProjectCard = ({ project, lastProject }: ProjectProps) => {
         </CardContent>
         <CardHeader className="p-0">
           <CardTitle className="font-normal  font-title text-lg">
-            <div className="text-center">{project.title}</div>
+            <div className="text-center group-hover:font-medium">{project.title}</div>
             {!lastProject && (
               <div className="text-center font-light">{project.subtitle}</div>
             )}

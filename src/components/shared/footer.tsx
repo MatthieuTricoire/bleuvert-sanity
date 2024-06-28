@@ -4,11 +4,11 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-bleuvert-light-gray mt-10 py-4 text-black flex flex-col items-center gap-4">
+    <footer className=" mt-10 py-4 text-black flex flex-col items-center gap-4">
       <Link href="#top">
         <Image
           className=""
-          src={"/logo/Favicon.svg"}
+          src={"/logo/logo-footer.svg"}
           alt="Logo bleuvert"
           width={64}
           height={64}

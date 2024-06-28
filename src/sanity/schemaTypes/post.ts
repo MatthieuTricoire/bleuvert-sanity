@@ -132,7 +132,11 @@ export default defineType({
       name: "imageGallery",
       title: "Galerie d'images",
       type: "array",
-      of: [{ type: "image" }],
+      of: [{
+        type: "image", options: {
+          accept: 'image/jpeg, image/png'
+        }
+      }],
     }),
     defineField({
       group: "images",

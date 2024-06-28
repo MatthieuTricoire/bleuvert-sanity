@@ -82,7 +82,7 @@ const SlugProjectPage = async ({ params }: SlugProjectPageProps) => {
 
       <section className="w-full  flex flex-col px-4 md:flex-row md:justify-center gap-8 md:gap-16">
         <Aside localisation={project.location} area={project.area} />
-        <div>
+        <div className="w-full">
           <Body body={project.body} />
           <PhotographerText photographer={project.photographer} />
         </div>
