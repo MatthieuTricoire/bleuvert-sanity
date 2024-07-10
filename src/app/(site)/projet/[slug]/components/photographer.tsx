@@ -11,7 +11,7 @@ const PhotographerText = ({ photographer }: PhotographerProps) => {
 
   if (photographer.socialLink) {
     return (
-      <Link href={photographer.socialLink} className="prose md:prose-lg ">
+      <Link href={photographer.socialLink}>
         Photographe : <span className="underline">{photographer.name}</span>
       </Link>
     );

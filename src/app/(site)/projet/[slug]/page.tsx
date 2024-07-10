@@ -67,7 +67,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 
       <section className="w-full my-8  flex flex-col py-4 px-4 md:flex-row md:justify-center gap-8 md:gap-16">
         <Aside localisation={project.location} area={project.area} />
-        <div className="flex ">
+        <div className="flex flex-col gap-4">
           <ProjectDescription body={project.body} />
           <PhotographerText photographer={project.photographer} />
         </div>

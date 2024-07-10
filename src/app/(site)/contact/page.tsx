@@ -1,5 +1,7 @@
 import React from "react";
 import ContactForm from "./components/contact-form";
+import { Instagram } from "lucide-react";
+import Link from "next/link";
 
 const ContactPage = () => {
   return (
@@ -16,6 +18,7 @@ const ContactPage = () => {
           Où nous trouver ?
         </h2>
 
+        <Link href={"https://www.instagram.com/studio_bleuvert/"}><Instagram className="mx-auto size-10 text-primary" /></Link>
         <div className="text-center mt-4">
           <div>Studio bleuvert</div>
           <div>17 Rue des Cordeliers, 64000 Pau</div>

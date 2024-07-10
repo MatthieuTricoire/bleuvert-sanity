@@ -8,7 +8,6 @@ type AsideProps = {
 };
 export const Aside = ({ localisation, area }: AsideProps) => {
   return (
-    // <div className="self-center md:self-start flex md:flex-col  gap-4 text-gray-600">
     <div className="w-fit  flex md:flex-col gap-4">
       {localisation && (
         <div className="flex gap-2">
