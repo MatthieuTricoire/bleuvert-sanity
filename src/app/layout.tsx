@@ -9,7 +9,7 @@ import { Footer } from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 
 const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata: Metadata = {
   title: "Studio bleuvert",
@@ -36,11 +36,11 @@ export default function RootLayout({
         )}
       >
         <Header />
-        {/* <main className="flex flex-col flex-1 max-w-7xl w-full mx-auto"> */}
-        {/*   {children} */}
-        {/* </main> */}
+
         <main className="flex flex-col flex-1 ">{children}</main>
+
         <Footer />
+
         <Toaster position="top-center" />
       </body>
     </html>

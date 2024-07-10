@@ -16,7 +16,7 @@ export const BreadcrumbComponent = ({ project }: BreadcrumbComponentProps) => {
     <Breadcrumb className="self-start mx-auto">
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink href="/">Acceuil</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

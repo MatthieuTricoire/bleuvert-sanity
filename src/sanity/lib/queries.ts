@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-export const getPostBySlugQuery = groq`*[_type=="post" && slug.current==$postSlug][0] {
+export const getProjectBySlugQuery = groq`*[_type=="post" && slug.current==$postSlug][0] {
       _id,
       "slug": slug.current,
       title,
@@ -30,7 +30,7 @@ title,
 "slug": slug.current
 }`;
 
-export const getPostsByCategorySlug = groq`*[_type == "post" && ($categorySlug == '' || references(*[_type == "category" && slug.current == $categorySlug]._id))] | order(_createdAt desc) {
+export const getProjectsByCategorySlugQuery = groq`*[_type == "post" && ($categorySlug == '' || references(*[_type == "category" && slug.current == $categorySlug]._id))] | order(_createdAt desc) {
     title,
     subtitle,
     "slug": slug.current,
@@ -43,7 +43,7 @@ export const getPostsByCategorySlug = groq`*[_type == "post" && ($categorySlug =
       }
   }`;
 
-export const getLastPosts = groq`*[_type == "post"] | order(_createdAt desc) {
+export const getLastProjectsQuery = groq`*[_type == "post"] | order(_createdAt desc) {
     title,
     subtitle,
     "slug": slug.current,

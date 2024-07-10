@@ -30,6 +30,7 @@ type Image = {
 };
 
 export type Photographer = {
+  name: string
   firstName?: string;
   lastName: string;
   socialLink?: string;

@@ -1,13 +1,18 @@
+import { BreadcrumbComponent } from "@/components/breadcrumb";
 import { MaxWidthContainer } from "@/components/max-width-container";
 import { Typography } from "@/components/typography";
+import Image from "next/image";
 import React from "react";
 
 const ConseilAvantAchatPage = () => {
   return (
-    <MaxWidthContainer>
+    <MaxWidthContainer className="mt-10">
+      <BreadcrumbComponent />
+
       <Typography variant="h1" component="h1">
         Le conseil avant achat immobilier : investissez intelligemment
       </Typography>
+
       <Typography variant="body" component="p">
         Vous envisagez d&#39;acheter un appartement ou une maison à Pau, dans le
         sud-ouest de la France, sur la côte basque et landaise ou à Paris ? Une
@@ -16,16 +21,22 @@ const ConseilAvantAchatPage = () => {
         votre acquisition de bien immobilier. Notre expertise en architecture
         d&#39;intérieur vous aide à réaliser le meilleur investissement.
       </Typography>
+
+      <Image src={"/features/conseil_avant_achat.jpg"} alt="Photo d'un magasin" width={4000} height={2667} className="w-full h-fit object-cover mt-10" />
+
       <Typography variant="h2" component="h2">
         En quoi consiste le conseil avant achat immobilier ?
       </Typography>
+
       <Typography variant="body" component="p">
         Nous vous aidons à voir le potentiel de votre achat et à réfléchir sur
         la rénovation de votre bien immobilier.
       </Typography>
+
       <Typography component="h3" variant="h3">
         Faites le bon choix
       </Typography>
+
       <Typography component="p" variant="body">
         Évitez les mauvaises surprises grâce à la prestation de conseil avant
         achat immobilier du Studio bleuvert. Nous procédons à l&#39;examen de

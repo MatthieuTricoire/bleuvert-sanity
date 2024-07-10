@@ -18,13 +18,13 @@ export const Categories = ({ categoriesList }: CategoriesProps) => {
   //TODO: Ajouter une 404 spécifique
 
   return (
-    <div className="flex justify-center">
+    <ul className="flex justify-center my-5 lg:mb-20">
       {categoriesList.map((category, idx) => {
         return (
           <li key={idx} className="list-none hightlight">
             <Link
-              className={cn("ml-4 font-title", {
-                " highlight-container ": category.slug === selectedCategory,
+              className={cn("ml-4 font-title text-base sm:text-lg ", {
+                "highlight-container ": category.slug === selectedCategory,
               })}
               href={
                 category.slug === selectedCategory
@@ -40,6 +40,6 @@ export const Categories = ({ categoriesList }: CategoriesProps) => {
           </li>
         );
       })}
-    </div>
+    </ul>
   );
 };

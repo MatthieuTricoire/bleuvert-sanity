@@ -1,6 +1,7 @@
 import { BreadcrumbComponent } from "@/components/breadcrumb";
 import { MaxWidthContainer } from "@/components/max-width-container";
 import { Typography } from "@/components/typography";
+import Image from "next/image";
 import React from "react";
 
 const ArchitectureInteriorPage = () => {
@@ -21,6 +22,9 @@ const ArchitectureInteriorPage = () => {
         métier ? Transformer et sublimer votre intérieur selon votre style de
         vie.
       </Typography>
+
+      <Image src={"/features/decoration_interieur.jpg"} alt="Photo d'un magasin" width={2667} height={4000} className="max-h-svh w-auto mx-auto mt-10"
+      />
 
       <section>
         <Typography component="h2" variant="h2">

@@ -8,20 +8,17 @@ type PhotographerProps = {
 const PhotographerText = ({ photographer }: PhotographerProps) => {
   if (!photographer) return null;
 
-  const photographerName = photographer.firstName
-    ? photographer.firstName + " " + photographer.lastName
-    : photographer.lastName;
 
   if (photographer.socialLink) {
     return (
       <Link href={photographer.socialLink} className="prose md:prose-lg ">
-        Photographe : <span className="underline">{photographerName}</span>
+        Photographe : <span className="underline">{photographer.name}</span>
       </Link>
     );
   }
 
   return (
-    <div className="prose md:prose-lg">Photographe : {photographerName}</div>
+    <div className="prose md:prose-lg">Photographe : {photographer.name}</div>
   );
 };
 export default PhotographerText;

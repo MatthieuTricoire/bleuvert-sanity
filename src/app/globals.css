@@ -17,10 +17,6 @@
     /* --primary: 222.2 47.4% 11.2%; */
     /* --primary-foreground: 210 40% 98%; */
 
-    --bleuvert-secondary: 201.78 36.76% 20.17%;
-    --bleuvert-accent: 61.27 28.279% 58.468%;
-    --bleuvert-light-gray: 220 27.27% 97.84%;
-
     --primary: 12.155 51.5% 45.5%;
     --primary-foreground: 210 40% 98%;
 
@@ -78,47 +74,28 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
 @layer utilities {
   .masonry {
     column-count: 2;
   }
+
   .masonry-sm {
     column-count: 2;
   }
+
   .masonry-md {
     column-count: 2;
   }
+
   .break-inside {
     break-inside: avoid;
   }
-}
-
-.blob-chloe {
-  -webkit-mask-image: url(/blob/blob-chloe.svg);
-  -webkit-mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-
-  mask-image: url(/blob/blob-chloe.svg);
-  mask-position: center center;
-  mask-repeat: no-repeat;
-  mask-size: cover;
-}
-
-.blob-laura {
-  -webkit-mask-image: url(/blob/blob-laura.svg);
-  -webkit-mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-
-  mask-image: url(/blob/blob-laura.svg);
-  mask-position: center center;
-  mask-repeat: no-repeat;
-  mask-size: cover;
 }
 
 .highlight-container,
@@ -138,9 +115,8 @@
   margin-left: -3px;
   margin-right: -3px;
   position: absolute;
-  /* background: #6dc5d1; */
-  background: hsl(var(--bleuvert-accent));
-  opacity: 0.3;
+  background: hsla(12.155, 51.501%, 75.541%);
+  opacity: 30%;
   transform: rotate(2deg);
   top: -1px;
   left: -1px;
@@ -152,20 +128,20 @@
 .embla {
   /* max-width: 48rem; */
   width: 100%;
-  aspect-ratio: 5/2;
+  height: 100%;
   margin: auto;
-  border-radius: 50px;
-  overflow: hidden;
   /* --slide-height: 19rem; */
   --slide-height: 100%;
   --slide-spacing: 1rem;
   --slide-size: 100%;
 }
+
 .embla__viewport {
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
+
 .embla__container {
   backface-visibility: hidden;
   height: 100%;
@@ -173,6 +149,7 @@
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
 }
+
 .embla__slide {
   flex: 0 0 var(--slide-size);
   min-width: 0;

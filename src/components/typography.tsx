@@ -19,15 +19,15 @@ export const Typography = ({
   switch (variant) {
     case "h1":
       variantStyle =
-        " font-title scroll-m-20 text-4xl font-semibold tracking-tight lg:text-5xl text-center mt-24";
+        " font-title scroll-m-20 text-2xl font-medium tracking-tight lg:text-4xl lg:tracking-wide uppercase text-center  mt-10 lg:mb-4";
       break;
     case "h2":
       variantStyle =
-        "font-title scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight  mt-10 mb-4";
+        "font-title scroll-m-20 border-b pb-2 text-3xl font-medium tracking-tight  mt-10 mb-4";
       break;
     case "h3":
       variantStyle =
-        "font-title scroll-m-20 text-2xl font-normal tracking-tight mt-6";
+        "font-title scroll-m-20 text-lg md:text-2xl font-normal tracking-tight ";
       break;
     case "body":
       variantStyle = "leading-7 [&:not(:first-child)]:mt-4";

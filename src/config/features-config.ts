@@ -18,12 +18,12 @@ export const featuresConfig: Feature[] = [
   },
   {
     title: "Conseil avant achat",
-    href: "/",
+    href: "/prestations/conseil-avant-achat",
     description: "Si vous envisagez d’acheter un bien immobilier, nous vous accompagnons pour une visite afin de discuter du potentiel de votre investissement et à réfléchir sur la rénovation de votre bien."
   },
   {
-    title: "Conseil achat VEFA",
-    href: "/",
+    title: "Conseil achat VEFA (vente en l'état futur d'achèvement)",
+    href: "/prestations/conseil-achat-vefa",
     description: "Le travail que nous réalisons sur la base des plans des promoteurs immobiliers vous permet de vous projeter de manière plus concrète sur votre achat et de réfléchir à un aménagement fonctionnel. Nous axons particulièrement nos recherches sur la décoration de votre intérieur (couleurs, matériaux, mobilier), tout cela afin d’aboutir à un projet qui vous ressemble et qui soit à votre image."
   },
 ];

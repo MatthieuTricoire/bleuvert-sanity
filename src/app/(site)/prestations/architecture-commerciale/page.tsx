@@ -1,6 +1,7 @@
 import { BreadcrumbComponent } from "@/components/breadcrumb";
 import { MaxWidthContainer } from "@/components/max-width-container";
 import { Typography } from "@/components/typography";
+import Image from "next/image";
 import React from "react";
 
 const ArchitectureInteriorPage = () => {
@@ -8,20 +9,18 @@ const ArchitectureInteriorPage = () => {
     <MaxWidthContainer className="mt-10">
       <BreadcrumbComponent />
 
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center mt-10">
-        L&apos;architecture commerciale : un design innovant pour les
-        entreprises
-      </h1>
+      <Typography variant="h1" component="h1">L&apos;architecture commerciale : un design innovant pour les
+        entreprises</Typography>
 
-      <p className="leading-7 [&:not(:first-child)]:mt-6 prose-base text-justify">
-        Vous êtes propriétaire d&apos;une boutique, d&apos;un bureau, d&apos;un
+      <Typography variant="body" component="p">Vous êtes propriétaire d&apos;une boutique, d&apos;un bureau, d&apos;un
         établissement médico-social ou d&apos;un restaurant ? Confiez
         l&apos;agencement intérieur de votre local commercial au Studio
         bleuvert. Notre expertise en architecture commerciale vous permettra
         d&apos;optimiser vos espaces de vente. Apportez une touche design et
         sophistiquée, en harmonie avec l&apos;identité visuelle de votre
-        établissement.
-      </p>
+        établissement.</Typography>
+
+      <Image src={"/features/architecture_commerciale_1.jpg"} alt="Photo d'un magasin" width={4000} height={2667} className="w-full h-fit object-cover mt-10" />
 
       <section>
         <Typography component="h2" variant="h2">

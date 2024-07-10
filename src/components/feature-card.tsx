@@ -14,30 +14,21 @@ export const FeatureCard = ({
   description,
 }: FeaturedCardProps) => {
   return (
-    <div className=" border-t-2 flex flex-col pt-4  gap-4">
+    <Link href={href} className=" border-t-2 flex flex-col pt-4  gap-4 group hover:border-t-gray-600 transition-all">
       <div className="flex items-center gap-4">
-        {/* <div className=" p-2 rounded-full" aria-hidden="true"> */}
-        {/*   <Image */}
-        {/*     src={"/shop.png"} */}
-        {/*     width={64} */}
-        {/*     height={64} */}
-        {/*     className="size-5" */}
-        {/*     alt={`Icône pour ${title}`} */}
-        {/*   /> */}
-        {/* </div> */}
-        {/* <h3 className="highlight highlight-container">{title}</h3> */}
         <Typography
           variant="h3"
           component="h3"
-          className="mt-0 font-medium highlight highlight-container"
+          // className="mt-0 font-medium highlight highlight-container"
+          className="mt-0 font-medium "
         >
           {title}
         </Typography>
       </div>
       <div>{description}</div>
-      <Link href={href} className="flex items-center hover:underline hover:underline-offset-2 group transition-all">
-        En savoir plus <ArrowRight className="size-4 ml-2 text-primary group-hover:translate-x-1" />
-      </Link>
-    </div>
+      <div className="flex items-center group-hover:font-medium transition-all">
+        En savoir plus <ArrowRight className="size-4 ml-2 text-primary group-hover:translate-x-1 transition-all" />
+      </div>
+    </Link>
   );
 };

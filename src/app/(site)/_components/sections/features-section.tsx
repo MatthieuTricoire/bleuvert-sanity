@@ -6,12 +6,12 @@ import Link from "next/link";
 export const FeatureSection = () => {
   return (
     <section className="bg-bleuvert-light-gray">
-      <MaxWidthContainer className="flex flex-col items-center mb-10">
+      <MaxWidthContainer className="flex flex-col items-center gap-4">
         <Typography variant="h2" component="h2" className="border-none">
           Nos prestations
         </Typography>
 
-        <Typography variant="body" component="p">
+        <Typography variant="body" component="p" className="text-justify sm:text-center">
           Il faut faire un petite paragraphe avec les mots clés de vos
           prestations : Architecture intérieur, Décoration intérieur, etc...{" "}
           <br />

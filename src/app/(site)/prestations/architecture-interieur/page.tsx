@@ -1,6 +1,8 @@
 import { BreadcrumbComponent } from "@/components/breadcrumb";
 import { MaxWidthContainer } from "@/components/max-width-container";
 import { Typography } from "@/components/typography";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React from "react";
 
 const ArchitectureInteriorPage = () => {
@@ -8,12 +10,11 @@ const ArchitectureInteriorPage = () => {
     <MaxWidthContainer className="mt-10">
       <BreadcrumbComponent />
 
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center mt-10">
+      <Typography variant="h1" component="h1">
         Architecture intérieur
-      </h1>
+      </Typography>
 
-      <p className="leading-7 [&:not(:first-child)]:mt-6 prose-base text-justify">
-        En faisant appel à un architecte d&apos;intérieur, vous avez
+      <Typography variant="body" component="p">        En faisant appel à un architecte d&apos;intérieur, vous avez
         l&apos;assurance d&apos;une optimisation experte de l&apos;espace,
         d&apos;une harmonie esthétique et de solutions personnalisées
         correspondant à vos besoins. Grâce à notre maîtrise des techniques et
@@ -21,7 +22,10 @@ const ArchitectureInteriorPage = () => {
         espace qui reflète votre style de vie. Découvrez nos prestations
         d&apos;architecture d&apos;intérieur réalisées à Pau, sur la côte basque
         et landaise et à Paris.
-      </p>
+      </Typography>
+
+      <Image src={"/features/architecture_interieur.jpg"} alt="Photo d'un magasin" width={2667} height={4000} className="max-h-svh w-auto mx-auto mt-10"
+      />
 
       <section>
         <Typography component="h2" variant="h2">

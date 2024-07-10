@@ -10,7 +10,7 @@ import {
 } from "./ui/breadcrumb";
 import React from "react";
 
-export const BreadcrumbComponent = () => {
+export const BreadcrumbComponent = ({ classname }: { classname?: string }) => {
   const pathname = usePathname();
   const splittedPath = pathname.trim().split("/");
 
@@ -27,9 +27,12 @@ export const BreadcrumbComponent = () => {
   });
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className={classname}>
       <BreadcrumbList>
         {breadcrumbItems.map((item, idx, breadcrumbItems) => {
+          if (item.href === "projet") {
+            item.href = "projets"
+          }
           return (
             <React.Fragment key={idx}>
               {idx !== breadcrumbItems.length - 1 ? (

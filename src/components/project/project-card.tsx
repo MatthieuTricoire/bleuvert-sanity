@@ -10,7 +10,7 @@ type ProjectProps = {
 
 export const ProjectCard = ({ project, lastProject }: ProjectProps) => {
   return (
-    <Link href={`/projet/${project.slug}`}>
+    <Link key={project._id} href={`/projet/${project.slug}`} className="place-items-center">
       <Card className="max-w-2xl group h-full w-full border-0 overflow-hidden rounded-none hover:shadow-none">
         <CardContent className="p-0 relative w-full aspect-[1.33]">
           {project.mainImageUrl && project.mainImageUrl.src && (
@@ -30,7 +30,7 @@ export const ProjectCard = ({ project, lastProject }: ProjectProps) => {
           <CardTitle className="font-normal  font-title text-lg">
             <div className="text-center group-hover:font-medium">{project.title}</div>
             {!lastProject && (
-              <div className="text-center font-light">{project.subtitle}</div>
+              <div className="text-center font-light text-sm">{project.subtitle}</div>
             )}
           </CardTitle>
         </CardHeader>
