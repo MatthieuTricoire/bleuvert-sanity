@@ -34,7 +34,7 @@ export const Header = () => {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={cn(
         "fixed z-20 top-0 w-full bg-white/70",
-        { "relative bg-white": pathname !== process.env.NEXT_PUBLIC_URL }
+        { "relative bg-white": pathname !== "/" }
       )} >
       <MaxWidthContainer className="xl:0">
         <div className="w-full flex justify-between h-[90px] items-center">
