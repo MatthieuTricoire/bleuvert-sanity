@@ -25,7 +25,7 @@ const ContactPage = () => {
         </div>
 
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.8522775431106!2d-0.37391872384197733!3d43.29641517112132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5648d3bef5868d%3A0xda4ea40c29177b21!2s17%20Rue%20des%20Cordeliers%2C%2064000%20Pau%2C%20France!5e0!3m2!1sfr!2suk!4v1712746483486!5m2!1sfr!2suk"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.8522761640343!2d-0.37134380000000006!3d43.2964152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5649cd92dede99%3A0x7f5957147a5ccd58!2sstudio%20bleuvert!5e0!3m2!1sfr!2sfr!4v1721228852755!5m2!1sfr!2sfr"
           height="450"
           style={{ border: 0 }}
           className="w-full md:max-w-3xl mx-auto rounded-lg"
