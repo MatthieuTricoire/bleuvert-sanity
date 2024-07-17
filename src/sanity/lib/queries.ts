@@ -30,9 +30,10 @@ title,
 "slug": slug.current
 }`;
 
-export const getProjectsByCategorySlugQuery = groq`*[_type == "post" && ($categorySlug == '' || references(*[_type == "category" && slug.current == $categorySlug]._id))] | order(_createdAt desc) {
+export const getProjectsByCategorySlugQuery = groq`*[_type == "post" && ($categorySlug == '' || references(*[_type == "category" && slug.current == $categorySlug]._id))] | order(project_date desc) {
     title,
     subtitle,
+    project_date,
     "slug": slug.current,
     "mainImageUrl": {
           "src": mainImage.asset->url,
@@ -43,9 +44,10 @@ export const getProjectsByCategorySlugQuery = groq`*[_type == "post" && ($catego
       }
   }`;
 
-export const getLastProjectsQuery = groq`*[_type == "post"] | order(_createdAt desc) {
+export const getLastProjectsQuery = groq`*[_type == "post"] | order(project_date desc) {
     title,
     subtitle,
+    project_date,
     "slug": slug.current,
     "mainImageUrl": {
           "src": mainImage.asset->url,

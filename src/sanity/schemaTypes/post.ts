@@ -27,7 +27,17 @@ export default defineType({
       validation: (rule) =>
         rule.required().error("Le titre d'un article est obligatoire."),
     }),
+    defineField({
+      group: "generalInformation",
+      name: "project_date",
+      title: "Date du projet",
+      description: "Exemple : 10/08/2024",
+      type: "date",
+      options: {
+        dateFormat: "DD-MM-YYYY"
+      }
 
+    }),
     defineField({
       group: "generalInformation",
       name: "subtitle",
