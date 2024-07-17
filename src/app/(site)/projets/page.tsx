@@ -38,7 +38,7 @@ export default async function Page({
           projectsByCategory={projectsByCategory}
         />
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
           {projectsByCategory.map((project) => {
             return <ProjectCard key={project._id} project={project} />;
           })}

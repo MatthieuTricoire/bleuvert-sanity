@@ -14,7 +14,7 @@ const StudioPage = () => {
           Qui sommes nous ?
         </Typography>
 
-        <Typography component="p" variant="body" >
+        <Typography component="p" variant="body" className="text-center">
           Nous concevons des aménagements intérieurs et des ambiances pour des
           particuliers et des professionnels en veillant à répondre à chacune
           de vos attentes. Nous vous accompagnons dans toutes les étapes du
@@ -32,7 +32,7 @@ const StudioPage = () => {
 
 
         <div className="">
-          <h2 className="text-xl highlight-container highlight">Chloé,</h2>
+          <h2 className="text-xl">Chloé,</h2>
           <Typography variant="body" component="p" className="text-justify">
             Ma formation juridique initiale et mes 8 années passées dans une
             étude notariale m’ont apporté rigueur et discipline dans la
@@ -49,7 +49,7 @@ const StudioPage = () => {
           </Typography>
         </div>
         <div className="">
-          <h2 className="text-xl highlight-container highlight">Laura,</h2>
+          <h2 className="text-xl ">Laura,</h2>
           <Typography variant="body" component="p" className="text-justify">
             Formée en design d’espace à l’école MMI Déco à Paris , je vous
             accompagne dans la rénovation et la décoration de votre intérieur

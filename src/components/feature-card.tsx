@@ -19,13 +19,12 @@ export const FeatureCard = ({
         <Typography
           variant="h3"
           component="h3"
-          // className="mt-0 font-medium highlight highlight-container"
           className="mt-0 font-medium "
         >
           {title}
         </Typography>
       </div>
-      <div>{description}</div>
+      <div className="text-justify">{description}</div>
       <div className="flex items-center group-hover:font-medium transition-all">
         En savoir plus <ArrowRight className="size-4 ml-2 text-primary group-hover:translate-x-1 transition-all" />
       </div>

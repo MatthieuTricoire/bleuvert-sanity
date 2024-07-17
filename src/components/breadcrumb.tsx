@@ -9,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "./ui/breadcrumb";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 export const BreadcrumbComponent = ({ classname }: { classname?: string }) => {
   const pathname = usePathname();
@@ -27,7 +28,7 @@ export const BreadcrumbComponent = ({ classname }: { classname?: string }) => {
   });
 
   return (
-    <Breadcrumb className={classname}>
+    <Breadcrumb className={cn("mt-10", classname)}>
       <BreadcrumbList>
         {breadcrumbItems.map((item, idx, breadcrumbItems) => {
           if (item.href === "projet") {

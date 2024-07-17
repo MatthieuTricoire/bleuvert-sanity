@@ -27,7 +27,7 @@ export const ProjectCard = ({ project, lastProject }: ProjectProps) => {
           )}
         </CardContent>
         <CardHeader className="p-0">
-          <CardTitle className="font-normal  font-title text-lg">
+          <CardTitle className="font-normal  font-title text-lg tracking-widest mt-2 ">
             <div className="text-center group-hover:font-medium">{project.title}</div>
             {!lastProject && (
               <div className="text-center font-light text-sm">{project.subtitle}</div>

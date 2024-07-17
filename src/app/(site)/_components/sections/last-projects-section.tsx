@@ -16,7 +16,7 @@ export const LastProjects = ({ projects }: LastProjectsProps) => {
         Nos dernières réalisations
       </Typography>
 
-      <div className="grid w-full grid-cols-1 md:grid-cols-4 gap-[20px] pb-[32px]">
+      <div className="mt-10 grid w-full grid-cols-1 md:grid-cols-4 gap-[20px] pb-[32px]">
         {projects.map((project, index) => (
           <div key={index}>
             <ProjectCard project={project} lastProject />

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 
 import useEmblaCarousel from "embla-carousel-react";
@@ -26,11 +26,13 @@ export const EmblaCarousel = () => {
     <section className="embla absolute inset-0 -z-20">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {CAROUSEL_IMAGES.map((image, index) => (
-            <div className="embla__slide relative" key={index}>
-              <Image src={image} fill alt="Décoration d'intérieur" className="object-cover object-center" />
-            </div>
-          ))}
+          {CAROUSEL_IMAGES.map((image, index) => {
+            return (
+              <div className="embla__slide relative" key={index}>
+                <Image src={image} fill alt="Décoration d'intérieur" className="object-cover object-center" />
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

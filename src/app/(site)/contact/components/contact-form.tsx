@@ -53,7 +53,7 @@ function App() {
 
       <div className="md:col-span-2">
         <div>Votre message</div>
-        <Textarea name="message" required />
+        <Textarea name="message" required className="md:h-52" />
       </div>
 
       <Button type="submit" className="md:col-span-2" disabled={isSubmitting}>

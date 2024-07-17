@@ -14,7 +14,8 @@ const ArchitectureInteriorPage = () => {
         Architecture intérieur
       </Typography>
 
-      <Typography variant="body" component="p">        En faisant appel à un architecte d&apos;intérieur, vous avez
+      <Typography variant="body" component="p">
+        En faisant appel à un architecte d&apos;intérieur, vous avez
         l&apos;assurance d&apos;une optimisation experte de l&apos;espace,
         d&apos;une harmonie esthétique et de solutions personnalisées
         correspondant à vos besoins. Grâce à notre maîtrise des techniques et
