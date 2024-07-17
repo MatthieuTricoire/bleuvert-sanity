@@ -35,7 +35,10 @@ export default defineType({
       type: "date",
       options: {
         dateFormat: "DD-MM-YYYY"
-      }
+      },
+      validation: (rule) =>
+        rule.required().error("La date du project est obligatoire"),
+
 
     }),
     defineField({

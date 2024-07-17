@@ -6,6 +6,7 @@ export type ProjectThumbnail = {
   subtitle: string;
   slug: string;
   mainImageUrl: Image;
+  project_date: string
 };
 
 export type Project = {

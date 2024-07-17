@@ -44,7 +44,7 @@ export const getProjectsByCategorySlugQuery = groq`*[_type == "post" && ($catego
       }
   }`;
 
-export const getLastProjectsQuery = groq`*[_type == "post"] | order(project_date desc) {
+export const getLastProjectsQuery = groq`*[_type == "post"] | order(project_date asc) {
     title,
     subtitle,
     project_date,
