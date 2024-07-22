@@ -9,9 +9,9 @@ export default function NotFound() {
     <MaxWidthContainer className='flex flex-col justify-center items-center flex-1'>
       <Typography component='h1' variant='h1'>Page non trouvée</Typography>
 
-      <Typography component='p' variant='body'>La page que vous recherchez n'existe pas.</Typography>
+      <Typography component='p' variant='body'>La page que vous recherchez n&apos;existe pas.</Typography>
 
-      <Link className={cn("mt-5", buttonVariants())} href="/">Retour sur la page d'accueil</Link>
+      <Link className={cn("mt-5", buttonVariants())} href="/">Retour sur la page d&apos;accueil</Link>
     </MaxWidthContainer>
   )
 }
