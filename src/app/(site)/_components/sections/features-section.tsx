@@ -11,22 +11,7 @@ export const FeatureSection = () => {
           Nos prestations
         </Typography>
 
-        <Typography variant="body" component="p" className="text-justify sm:text-center">
-          Il faut faire un petite paragraphe avec les mots clés de vos
-          prestations : Architecture intérieur, Décoration intérieur, etc...{" "}
-          <br />
-          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
-          enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
-          exercitation amet. Nisi anim cupidatat excepteur officia.
-          Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate
-          voluptate dolor minim nulla est proident. Nostrud officia pariatur ut
-          officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit
-          commodo officia dolor Lorem duis laboris cupidatat officia voluptate.
-          Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis
-          officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis
-          sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
-          consectetur et est culpa et culpa duis.
-        </Typography>
+        <Typography variant="body" component="p" className="text-justify sm:text-center">Nous concevons et aménageons des espaces intérieurs en tenant compte de l'esthétique, de la fonctionnalité et du confort. Nous travaillons sur divers projets, allant de la rénovation de maisons à l'aménagement de bureaux ou de commerces. Les prestations peuvent inclure : le conseil en design avec proposition de style, de couleurs et de matériaux, l'aménagement de l'espace avec plans détaillés et modèles 3D pour visualiser le projet, la sélection de mobilier et de décorations comprenant le choix de meuble, d'éclairages et d'objets décoratifs et enfin la maîtrise d'oeuvre assurant la coordination avec d'autres professionnels comme les entrepreneurs et les artisans.</Typography>
 
         <Link className={buttonVariants()} href="/prestations">
           En savoir plus
