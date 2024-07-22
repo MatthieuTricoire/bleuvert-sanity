@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local"
 import { Raleway } from "next/font/google";
 import { Lato } from "next/font/google";
 import { Roboto } from "next/font/google";
@@ -12,7 +13,12 @@ import { Toaster } from "@/components/ui/sonner";
 const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const lato = Lato({ weight: ["400", "700",], subsets: ["latin"] });
-const garamong = Roboto({ weight: ["400", "500", "700",], subsets: ["latin"] });
+const roboto = Roboto({ weight: ["400", "500", "700",], subsets: ["latin"] });
+const moonRegular = localFont({
+  src: './fonts/moon-regular.woff2',
+  display: "swap",
+  variable: "--font-moonRegular"
+})
 
 export const metadata: Metadata = {
   title: "Studio bleuvert",
@@ -36,7 +42,7 @@ export default function RootLayout({
           "overflow-y-scroll min-h-screen flex flex-col relative text-[#25110C]",
           `${raleway.variable}`,
           poppins.className,
-          garamong.className
+          roboto.className
         )}
       >
         <Header />

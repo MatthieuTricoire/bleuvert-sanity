@@ -10,6 +10,7 @@ import { MaxWidthContainer } from "@/components/max-width-container";
 import ProjectDescription from "./components/project-description";
 import { cn } from "@/lib/utils";
 import { BreadcrumbComponent } from "@/components/breadcrumb";
+import { notFound } from "next/navigation";
 
 type ProjectPageProps = {
   params: {
@@ -25,6 +26,9 @@ export async function generateMetadata({
   const projectSlug = params.slug;
 
   const project = await getProjectBySlug(projectSlug)
+  if (!project) {
+    return notFound()
+  }
 
   const imageUrl = `${project.mainImage.src}?w=630&h=630`;
 
@@ -40,7 +44,10 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 
   const project = await getProjectBySlug(params.slug)
 
-  console.log(project)
+  if (!project) {
+    return notFound()
+  }
+
   return (
     <MaxWidthContainer className="flex flex-col items-center mt-10">
       <BreadcrumbComponent classname="self-start" />

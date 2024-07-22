@@ -17,12 +17,13 @@ export const getProjectBySlug = async (projectSlug: string) => {
     tags: ["post", "category"],
   })
 
-  if (project.photographer && project.photographer.firstName && project.photographer.lastName) {
+  if (project && project.photographer && project.photographer.firstName && project.photographer.lastName) {
     project.photographer.name = project.photographer.firstName + " " + project.photographer.lastName
   }
 
   return project
 };
+
 
 const postsNumber = 3;
 

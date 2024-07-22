@@ -20,6 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         title: ["var(--font-raleway)"],
+        // title: ["var(--font-moonRegular)"],
       },
       colors: {
         bleuvert: {
